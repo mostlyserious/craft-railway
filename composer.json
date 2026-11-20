@@ -1,0 +1,31 @@
+{
+    "name": "mostlyserious/craft-railway",
+    "description": "Railway pre-deploy command for Craft CMS: waits its turn, refuses stale releases, and verifies that migrations and project config were applied.",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "craftcms/cms": "^5.9"
+    },
+    "require-dev": {
+        "craftcms/phpstan": "dev-main",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "mostlyserious\\railway\\": "src/"
+        }
+    },
+    "extra": {
+        "bootstrap": "mostlyserious\\railway\\Extension"
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "allow-plugins": {
+            "craftcms/plugin-installer": true,
+            "yiisoft/yii2-composer": true
+        }
+    }
+}
